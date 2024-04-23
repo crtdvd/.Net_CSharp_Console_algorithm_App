@@ -1,0 +1,15 @@
+C:\Users\cris_\OneDrive\Documentos\.NET_projects\Console_Snippet_testing\bin\Debug\net7.0\Console_Snippet_testing.exe
+C:\Users\cris_\OneDrive\Documentos\.NET_projects\Console_Snippet_testing\bin\Debug\net7.0\Console_Snippet_testing.deps.json
+C:\Users\cris_\OneDrive\Documentos\.NET_projects\Console_Snippet_testing\bin\Debug\net7.0\Console_Snippet_testing.runtimeconfig.json
+C:\Users\cris_\OneDrive\Documentos\.NET_projects\Console_Snippet_testing\bin\Debug\net7.0\Console_Snippet_testing.dll
+C:\Users\cris_\OneDrive\Documentos\.NET_projects\Console_Snippet_testing\bin\Debug\net7.0\Console_Snippet_testing.pdb
+C:\Users\cris_\OneDrive\Documentos\.NET_projects\Console_Snippet_testing\obj\Debug\net7.0\Console_Snippet_testing.csproj.AssemblyReference.cache
+C:\Users\cris_\OneDrive\Documentos\.NET_projects\Console_Snippet_testing\obj\Debug\net7.0\Console_Snippet_testing.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\cris_\OneDrive\Documentos\.NET_projects\Console_Snippet_testing\obj\Debug\net7.0\Console_Snippet_testing.AssemblyInfoInputs.cache
+C:\Users\cris_\OneDrive\Documentos\.NET_projects\Console_Snippet_testing\obj\Debug\net7.0\Console_Snippet_testing.AssemblyInfo.cs
+C:\Users\cris_\OneDrive\Documentos\.NET_projects\Console_Snippet_testing\obj\Debug\net7.0\Console_Snippet_testing.csproj.CoreCompileInputs.cache
+C:\Users\cris_\OneDrive\Documentos\.NET_projects\Console_Snippet_testing\obj\Debug\net7.0\Console_Snippet_testing.dll
+C:\Users\cris_\OneDrive\Documentos\.NET_projects\Console_Snippet_testing\obj\Debug\net7.0\refint\Console_Snippet_testing.dll
+C:\Users\cris_\OneDrive\Documentos\.NET_projects\Console_Snippet_testing\obj\Debug\net7.0\Console_Snippet_testing.pdb
+C:\Users\cris_\OneDrive\Documentos\.NET_projects\Console_Snippet_testing\obj\Debug\net7.0\Console_Snippet_testing.genruntimeconfig.cache
+C:\Users\cris_\OneDrive\Documentos\.NET_projects\Console_Snippet_testing\obj\Debug\net7.0\ref\Console_Snippet_testing.dll
