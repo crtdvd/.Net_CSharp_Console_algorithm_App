@@ -19,6 +19,7 @@ namespace Console_Snippet_testing.Services
         public IEnumerable<Problem> GetAllProblems() => _repository.GetAll();
 
         public IEnumerable<Problem> SearchProblems(string query) => _repository.Search(query);
-        
+
+        public void AddProblem(Problem problem) => _repository.Add(problem);
     }
 }

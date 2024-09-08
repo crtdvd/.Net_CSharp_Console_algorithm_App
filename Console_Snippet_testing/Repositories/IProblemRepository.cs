@@ -10,5 +10,6 @@ namespace Console_Snippet_testing.Repositories
     {
         IEnumerable<Problem> GetAll();
         IEnumerable<Problem> Search(string query);
+        void Add(Problem problem);
     }
 }

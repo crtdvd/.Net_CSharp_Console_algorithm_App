@@ -46,5 +46,9 @@ namespace Console_Snippet_testing.Repositories
             );
         }
 
+        public void Add(Problem problem)
+        {
+            _problems.Add(problem);
+        }
     }
 }

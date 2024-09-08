@@ -1,5 +1,3 @@
-
-
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,5 +10,6 @@ namespace Console_Snippet_testing.Services
     {
         IEnumerable<Problem> GetAllProblems();
         IEnumerable<Problem> SearchProblems(string query);
+        void AddProblem(Problem problem);
     }
 }
