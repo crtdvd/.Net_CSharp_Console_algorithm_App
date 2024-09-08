@@ -1,4 +1,6 @@
 ﻿using System.Security.Cryptography.X509Certificates;
+using System.Text;
+using Microsoft.VisualBasic;
 
 namespace Program
 {
@@ -235,13 +237,12 @@ namespace Program
             return result;
         }
 
-
         public static void TripletSum_Test()
         {
             int[] input = { -13, 11, 11, 0, -5, -14, 12, -11, -11, -14, -3, 0, -3, 12, -1, -9, -5, -13, 9, -7, -2, 9, -1, 4, -6, -13, -7, 10, 10, 9, 7, 13, 5, 4, -2, 7, 5, -13, 11, 10, -12, -14, -5, -8, 13, 2, -2, -14, 4, -8, -6, -13, 9, 8, 6, 10, 2, 6, 5, -10, 0, -11, -12, 12, 8, -7, -4, -9, -13, -7, 8, 12, -14, 10, -10, 14, -3, 3, -15, -14, 3, -14, 10, -11, 1, 1, 14, -11, 14, 4, -6, -1, 0, -11, -12, -14, -11, 0, 14, -9, 0, 7, -12, 1, -6 };
-            
+
             //Valid function calls : TripletSum(), ThreeSum() -> better one
-            
+
             IList<IList<int>> output = ThreeSum(input);
             //print the output int the console using the nested List formatting 
             //separing the different list inside the output with patenthesis each
@@ -273,8 +274,75 @@ namespace Program
             }
         }
 
-        /* New problem 
+        /* LETTER COMBINATIONS OF A PHONE NUMBER
+
+            Given a string containing digits from 2-9 inclusive, return all possible letter 
+            combinations that the number could represent. Return the answer in any order.
+
+            2 = (a, b, c), 3 = (d, e, f), 4 = (g, h, i), 5 = (j, k, l), 6 = (m, n, o), 
+            7 = (p, q, r, s), 8 = (t, u, v), 9 = (w, x, y, z)
+
+            Example 1:
+
+            Input: digits = "23"
+            Output: ["ad","ae","af","bd","be","bf","cd","ce","cf"]
+            Example 2:
+
+            Input: digits = ""
+            Output: []
+            Example 3:
+
+            Input: digits = "2"
+            Output: ["a","b","c"]
+            
+
+            Constraints:
+
+            0 <= digits.length <= 4
+            digits[i] is a digit in the range ['2', '9'].
+
         */
+        public static IList<string> LetterCombinations(string digits)
+        {
+            IList<string> output = new List<string>();
+            if (string.IsNullOrEmpty(digits))
+            {
+                return output;
+            }
+
+            Dictionary<char, string> phone = new Dictionary<char, string>
+            {
+                {'2', "abc"}, {'3', "def"}, {'4', "ghi"}, {'5', "jkl"},
+                {'6', "mno"}, {'7', "pqrs"}, {'8', "tuv"}, {'9', "wxyz"}
+            };
+
+            void Backtrack(int index, StringBuilder current)
+            {
+                if (index == digits.Length)
+                {
+                    output.Add(current.ToString());
+                    return;
+                }
+
+                foreach (char letter in phone[digits[index]])
+                {
+                    current.Append(letter);
+                    Backtrack(index + 1, current);
+                    current.Length--;
+                }
+            }
+
+            Backtrack(0, new StringBuilder());
+            return output;
+        }
+
+        public static void LetterCombinations_Test()
+        {
+            string input = "23";
+            IList<string> result = LetterCombinations(input);
+            Console.WriteLine($"Input: {input}");
+            Console.WriteLine($"Output: [{string.Join(", ", result)}]");
+        }
 
         static void Main(string[] args)
         {
@@ -284,6 +352,8 @@ namespace Program
             // Triplet sum problem test
             TripletSum_Test();
 
+            // Letter combinations problem test
+            LetterCombinations_Test();
         }
     }
 }
