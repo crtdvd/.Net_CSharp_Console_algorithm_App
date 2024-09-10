@@ -30,11 +30,58 @@ Constraints:
 1 <= s.length <= 104
 s consists of parentheses only '()[]{}'.";
 
+        public static string SolutionCode => @"
+public static bool IsValid(string s) {
+    Stack<char> stack = new Stack<char>();
+    foreach (char c in s) {
+        if (c == '(' || c == '{' || c == '[') {
+            stack.Push(c);
+        } else if (c == ')' && (stack.Count == 0 || stack.Pop() != '(')) {
+            return false;
+        } else if (c == '}' && (stack.Count == 0 || stack.Pop() != '{')) {
+            return false;
+        } else if (c == ']' && (stack.Count == 0 || stack.Pop() != '[')) {
+            return false;
+        }
+    }
+    return stack.Count == 0;
+}";
+
         public static void Test()
         {
-            // TODO: Implement the test method
             Console.WriteLine("Running Valid Parenthesis test...");
-            // Add your test implementation here
+            string[] testCases = { "()", "()[]{}", "(]", "([)]", "{[]}" };
+            foreach (string testCase in testCases)
+            {
+                Console.WriteLine($"Input: {testCase}");
+                Console.WriteLine($"Output: {IsValid(testCase)}");
+                Console.WriteLine();
+            }
+        }
+
+        private static bool IsValid(string s)
+        {
+            Stack<char> stack = new Stack<char>();
+            foreach (char c in s)
+            {
+                if (c == '(' || c == '{' || c == '[')
+                {
+                    stack.Push(c);
+                }
+                else if (c == ')' && (stack.Count == 0 || stack.Pop() != '('))
+                {
+                    return false;
+                }
+                else if (c == '}' && (stack.Count == 0 || stack.Pop() != '{'))
+                {
+                    return false;
+                }
+                else if (c == ']' && (stack.Count == 0 || stack.Pop() != '['))
+                {
+                    return false;
+                }
+            }
+            return stack.Count == 0;
         }
     }
 }

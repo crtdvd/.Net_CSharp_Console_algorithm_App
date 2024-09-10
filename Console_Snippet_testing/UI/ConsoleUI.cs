@@ -89,16 +89,17 @@ namespace Console_Snippet_testing.UI
             Console.WriteLine(string.Join(", ", problem.Tags));
             PrintSubHeader("Description");
             Console.WriteLine(problem.Description);
-            Console.WriteLine("\nPress any key to run the solution...");
+            PrintSubHeader("Solution Code");
+            Console.WriteLine(problem.SolutionCode);
+            Console.WriteLine("\nPress any key to run the test...");
             Console.ReadKey();
 
-            PrintSubHeader("Solution");
-            problem.Solution();
+            PrintSubHeader("Test Results");
+            problem.TestSolution();
 
             Console.WriteLine("\nPress any key to go back...");
             Console.ReadKey();
         }
-
         private void AddNewProblem()
         {
             Console.Clear();
@@ -114,9 +115,12 @@ namespace Console_Snippet_testing.UI
             string? tagsInput = Console.ReadLine();
             List<string> tags = tagsInput?.Split(',').Select(t => t.Trim()).ToList() ?? new List<string>();
 
-            if (!string.IsNullOrWhiteSpace(name) && !string.IsNullOrWhiteSpace(description))
+            Console.Write("Enter solution code: ");
+            string? solutionCode = Console.ReadLine();
+
+            if (!string.IsNullOrWhiteSpace(name) && !string.IsNullOrWhiteSpace(description) && !string.IsNullOrWhiteSpace(solutionCode))
             {
-                Problem newProblem = new Problem(name, description, () => Console.WriteLine("Solution not implemented yet."), tags);
+                Problem newProblem = new Problem(name, description, solutionCode, () => Console.WriteLine("Solution not implemented yet."), tags);
                 _problemService.AddProblem(newProblem);
                 Console.WriteLine("\nProblem added successfully. Press any key to continue...");
             }

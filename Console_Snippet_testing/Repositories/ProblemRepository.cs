@@ -9,46 +9,45 @@ namespace Console_Snippet_testing.Repositories
 {
     public class ProblemRepository : IProblemRepository
     {
-        private readonly List<Problem> _problems;
-
-        public ProblemRepository()
+        private readonly List<Problem> _problems = new List<Problem>
         {
-            _problems = new List<Problem>
-            {
-                new Problem(
-                    "Valid Parenthesis",
-                    ValidParenthesis.Description,
-                    ValidParenthesis.Test,
-                    new List<string> { "string", "stack", "validation" }
-                ),
-                new Problem(
-                    "Array Triplets Sum",
-                    ArrayTripletsSum.Description,
-                    ArrayTripletsSum.Test,
-                    new List<string> { "array", "sum", "triplets" }
-                ),
-                new Problem(
-                    "Letter Combinations of a Phone Number",
-                    LetterCombinations.Description,
-                    LetterCombinations.Test,
-                    new List<string> { "string", "combination", "recursion" }
-                )
-            };
-        }
+            new Problem(
+        "Valid Parenthesis",
+        ValidParenthesis.Description,
+        ValidParenthesis.SolutionCode,
+        ValidParenthesis.Test,
+        new List<string> { "string", "stack", "validation" }
+    ),
+    new Problem(
+        "Array Triplets Sum",
+        ArrayTripletsSum.Description,
+        ArrayTripletsSum.SolutionCode,
+        ArrayTripletsSum.Test,
+        new List<string> { "array", "sum", "triplets" }
+    ),
+    new Problem(
+        "Letter Combinations of a Phone Number",
+        LetterCombinations.Description,
+        LetterCombinations.SolutionCode,
+        LetterCombinations.Test,
+        new List<string> { "string", "combination", "recursion" }
+    )
+};
 
-        public IEnumerable<Problem> GetAll() => _problems;
 
-        public IEnumerable<Problem> Search(string query)
-        {
-            return _problems.Where(p =>
-                p.Name.Contains(query, StringComparison.OrdinalIgnoreCase) ||
-                p.Tags.Any(t => t.Contains(query, StringComparison.OrdinalIgnoreCase))
-            );
-        }
+public IEnumerable<Problem> GetAll() => _problems;
 
-        public void Add(Problem problem)
-        {
-            _problems.Add(problem);
-        }
+public IEnumerable<Problem> Search(string query)
+{
+    return _problems.Where(p =>
+        p.Name.Contains(query, StringComparison.OrdinalIgnoreCase) ||
+        p.Tags.Any(t => t.Contains(query, StringComparison.OrdinalIgnoreCase))
+    );
+}
+
+public void Add(Problem problem)
+{
+    _problems.Add(problem);
+}
     }
 }

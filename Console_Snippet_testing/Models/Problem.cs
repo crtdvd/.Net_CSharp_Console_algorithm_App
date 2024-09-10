@@ -9,14 +9,16 @@ namespace Console_Snippet_testing.Models
     {
         public string Name { get; set; }
         public string Description { get; set; }
-        public Action Solution { get; set; }
+        public string SolutionCode { get; set; }
+        public Action TestSolution { get; set; }
         public List<string> Tags { get; set; }
 
-        public Problem(string name, string description, Action solution, List<string> tags)
+        public Problem(string name, string description, string solutionCode, Action testSolution, List<string> tags)
         {
             Name = name;
             Description = description;
-            Solution = solution;
+            SolutionCode = solutionCode;
+            TestSolution = testSolution;
             Tags = tags;
         }
     }
