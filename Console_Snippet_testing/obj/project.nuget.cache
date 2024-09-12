@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "MzT/rufTpu83vsCmpDdXsCBvblAasHyhBMC0UjktDQhWQPKVvosdffK4HluoxXZhBxjymxtUJPfl4Y3EOpFdNg==",
+  "dgSpecHash": "/ih2IJO6Cw4NyirUmskkalTG0GPOGA1A9PHZR0kR21ktjO3RmGQsCRz0Eq5Hq8C7shUprmgW4VLa2DLdNT4hAQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\cris_\\OneDrive\\Documentos\\.NET_projects\\Console_Snippet_testing\\Console_Snippet_testing.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\cris_\\.nuget\\packages\\system.collections.immutable\\8.0.0\\system.collections.immutable.8.0.0.nupkg.sha512",
+    "C:\\Users\\cris_\\.nuget\\packages\\system.reflection.metadata\\8.0.0\\system.reflection.metadata.8.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
