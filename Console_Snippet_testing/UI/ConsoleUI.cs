@@ -105,7 +105,7 @@ namespace Console_Snippet_testing.UI
             Console.Clear();
             PrintHeader("Add New Problem");
 
-            Console.Write("Enter problem name: ");
+            Console.Write("Enter problem name: ");              
             string? name = Console.ReadLine();
 
             Console.Write("Enter problem description: ");
