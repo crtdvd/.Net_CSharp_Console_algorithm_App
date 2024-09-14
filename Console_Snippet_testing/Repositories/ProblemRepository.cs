@@ -9,45 +9,49 @@ namespace Console_Snippet_testing.Repositories
 {
     public class ProblemRepository : IProblemRepository
     {
-        private readonly List<Problem> _problems = new List<Problem>
+        private readonly List<Problem> _problems;
+
+        public ProblemRepository()
         {
-            new Problem(
-        "Valid Parenthesis",
-        ValidParenthesis.Description,
-        ValidParenthesis.SolutionCode,
-        ValidParenthesis.Test,
-        new List<string> { "string", "stack", "validation" }
-    ),
-    new Problem(
-        "Array Triplets Sum",
-        ArrayTripletsSum.Description,
-        ArrayTripletsSum.SolutionCode,
-        ArrayTripletsSum.Test,
-        new List<string> { "array", "sum", "triplets" }
-    ),
-    new Problem(
-        "Letter Combinations of a Phone Number",
-        LetterCombinations.Description,
-        LetterCombinations.SolutionCode,
-        LetterCombinations.Test,
-        new List<string> { "string", "combination", "recursion" }
-    )
-};
+            _problems = new List<Problem>
+            {
+                new Problem(
+                    "Valid Parenthesis",
+                    new ValidParenthesis().Description,
+                    new ValidParenthesis().SolutionCode,
+                    new ValidParenthesis().Test,
+                    new List<string> { "string", "stack", "validation" }
+                ),
+                new Problem(
+                    "Array Triplets Sum",
+                    new ArrayTripletsSum().Description,
+                    new ArrayTripletsSum().SolutionCode,
+                    new ArrayTripletsSum().Test,
+                    new List<string> { "array", "sum", "triplets" }
+                ),
+                new Problem(
+                    "Letter Combinations of a Phone Number",
+                    new LetterCombinations().Description,
+                    new LetterCombinations().SolutionCode,
+                    new LetterCombinations().Test,
+                    new List<string> { "string", "combination", "recursion" }
+                )
+            };
+        }
 
+        public IEnumerable<Problem> GetAll() => _problems;
 
-public IEnumerable<Problem> GetAll() => _problems;
+        public IEnumerable<Problem> Search(string query)
+        {
+            return _problems.Where(p =>
+                p.Name.Contains(query, StringComparison.OrdinalIgnoreCase) ||
+                p.Tags.Any(t => t.Contains(query, StringComparison.OrdinalIgnoreCase))
+            );
+        }
 
-public IEnumerable<Problem> Search(string query)
-{
-    return _problems.Where(p =>
-        p.Name.Contains(query, StringComparison.OrdinalIgnoreCase) ||
-        p.Tags.Any(t => t.Contains(query, StringComparison.OrdinalIgnoreCase))
-    );
-}
-
-public void Add(Problem problem)
-{
-    _problems.Add(problem);
-}
+        public void Add(Problem problem)
+        {
+            _problems.Add(problem);
+        }
     }
 }
